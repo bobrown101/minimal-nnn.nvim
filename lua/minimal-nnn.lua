@@ -12,7 +12,7 @@ function M.start()
 
     -- use nvim --server to "callback" over rpc the result of "filepickercommand"
     local callbackcommand = string.format(
-                                [[%s | nvim --server %s --remote $(filepickercommand) ]],
+                                [[%s | nvim --server %s --remote $(%s) ]],
                                 socketname, filepickercommand)
 
     -- open up the callbackcommand (which already contains the filepickercommand) in a new terminal buffer
