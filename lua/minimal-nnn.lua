@@ -11,8 +11,9 @@ function M.start()
     local filepickercommand = 'nnn -p - ' .. currentLocation
 
     -- use nvim --server to "callback" over rpc the result of "filepickercommand"
-    local callbackcommand = string.format([[%s | nvim --server %s --remote  ]],
-                                          filepickercommand, socketname)
+    local callbackcommand = string.format(
+                                [[%s | nvim --server %s --remote $(filepickercommand) ]],
+                                socketname, filepickercommand)
 
     -- open up the callbackcommand (which already contains the filepickercommand) in a new terminal buffer
     vim.cmd('term ' .. callbackcommand)
