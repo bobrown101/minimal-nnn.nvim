@@ -1,6 +1,6 @@
 ## minimal-nnn.nvim
 
-The most minimal nnn plugin for neovim ever
+The most minimal [nnn](https://github.com/jarun/nnn) plugin for neovim ever
 
 ![demo gif](demo.gif)
 
